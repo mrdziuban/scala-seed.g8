@@ -12,7 +12,7 @@ lazy val root = (project in file("."))
       "-feature",                                  // Emit warning and location for usages of features that should be imported explicitly.
       "-language:higherKinds",                     // Allow higher-kinded types
       "-P:splain:all",                             // Enable all splain compiler plugin options -- https://github.com/tek/splain
-      "-P:splain:rewrite:^(([^\\.]+\\.)*)([^\\.]+)\\.Type$/$3", // Rewrite types in splain errors to remove `.Type` from the end (newtypes)
+      "-P:splain:rewrite:^(([^\\.]+\\.)*)([^\\.]+)\\.Type\$/\$3", // Rewrite types in splain errors to remove `.Type` from the end (newtypes)
       "-unchecked",                                // Enable additional warnings where generated code depends on assumptions.
       "-Xcheckinit",                               // Wrap field accessors to throw an exception on uninitialized access.
       "-Xfatal-warnings",                          // Fail the compilation if there are any warnings.
