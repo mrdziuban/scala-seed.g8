@@ -13,6 +13,7 @@ lazy val root = (project in file("."))
       "-language:higherKinds",                     // Allow higher-kinded types
       "-P:splain:all",                             // Enable all splain compiler plugin options -- https://github.com/tek/splain
       "-P:splain:rewrite:^(([^\\\\.]+\\\\.)*)([^\\\\.]+)\\\\.Type\$/\$3", // Rewrite types in splain errors to remove `.Type` from the end (newtypes)
+      "-P:splain:foundreq:false",                  // Disable splain hijacking type mismatch errors
       "-unchecked",                                // Enable additional warnings where generated code depends on assumptions.
       "-Xcheckinit",                               // Wrap field accessors to throw an exception on uninitialized access.
       "-Xfatal-warnings",                          // Fail the compilation if there are any warnings.
@@ -22,7 +23,6 @@ lazy val root = (project in file("."))
       "-Ybreak-cycles",                            // Attempt to break cycles encountered during typing.
       "-Yno-adapted-args",                         // Do not adapt an argument list (either by inserting () or creating a tuple) to match the receiver.
       "-Ywarn-dead-code",                          // Warn when dead code is identified. N.B. doesn't work well with the ??? hole
-      "-Ybackend-parallelism", procs,              // maximum worker threads for backend
       "-Ycache-macro-class-loader:last-modified",  // Policy for caching class loaders for macros that are dynamically loaded.
       "-Ycache-plugin-class-loader:last-modified", // Policy for caching class loaders for compiler plugins that are dynamically loaded.
       "-Ypartial-unification",                     // Enable partial unification in type constructor inference
