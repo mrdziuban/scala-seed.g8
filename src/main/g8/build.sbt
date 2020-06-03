@@ -1,10 +1,10 @@
-lazy val root = (project in file("."))
+lazy val root = project.in(file("."))
   .settings(
     name := "$name$",
     organization := "com.example",
     scalaVersion := "2.13.2",
     version      := "0.1.0-SNAPSHOT",
-    addCompilerPlugin("io.tryp" % "splain" % "0.5.6" cross CrossVersion.patch),,
+    addCompilerPlugin("io.tryp" % "splain" % "0.5.6" cross CrossVersion.patch),
     scalacOptions ++= Seq(
       "-P:splain:all",                             // Enable all splain compiler plugin options -- https://github.com/tek/splain
       "-P:splain:rewrite:^(([^\\\\.]+\\\\.)*)([^\\\\.]+)\\\\.Type\$/\$3", // Rewrite types in splain errors to remove `.Type` from the end (newtypes)
