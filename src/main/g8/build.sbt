@@ -2,7 +2,7 @@ lazy val root = project.in(file("."))
   .settings(
     name := "$name$",
     organization := "com.example",
-    scalaVersion := "2.13.3",
+    scalaVersion := "2.13.4",
     version      := "0.1.0-SNAPSHOT",
     addCompilerPlugin("io.tryp" % "splain" % "0.5.7" cross CrossVersion.patch),
     scalacOptions ++= Seq(
